@@ -1,5 +1,8 @@
 <?php
 
+use App\Http\Controllers\ApplicationController;
+use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -19,4 +22,18 @@ Route::get('/', function () {
 });
 
 Auth::routes();
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Route::get('/home', [HomeController::class, 'index'])->name('home');
+
+// Category
+Route::get('/category', [CategoryController::class, 'index'])->name('category');
+Route::post('/category/store', [CategoryController::class, 'store'])->name('add.category');
+Route::put('/category/{id}', [CategoryController::class, 'update'])->name('edit.category');
+Route::delete('/category/{id}', [CategoryController::class, 'destroy'])->name('delete.category');
+
+// Application
+Route::get('/application', [ApplicationController::class, 'index'])->name('application');
+Route::post('/application/store', [ApplicationController::class, 'store'])->name('add.application');
+Route::put('/application/{id}', [ApplicationController::class, 'update'])->name('edit.application');
+Route::delete('/application/{id}', [ApplicationController::class, 'destroy'])->name('delete.application');
+

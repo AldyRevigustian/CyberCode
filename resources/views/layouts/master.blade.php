@@ -22,6 +22,12 @@
         href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.min.css"
         integrity="sha512-mSYUmp1HYZDFaVKK//63EcZq4iFWFjxSL+Z3T/aCt4IO9Cejm03q3NKKYN6pFQzY0SBOr8h+eCIAZHPXcpZaNw=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+        <style>
+            .dataTable-top{
+                padding-left: 0px;
+            }
+        </style>
 </head>
 
 <body class="theme-light">
@@ -30,7 +36,7 @@
             <div class="sidebar-header position-relative">
                 <div class="d-flex justify-content-between align-items-center">
                     <div class="logo">
-                        <a href="index.html"><img src="assets/images/logo/logo.svg" alt="Logo" srcset=""></a>
+                        <a href="/home"><img src="assets/images/logo/logo.svg" alt="Logo" srcset=""></a>
                     </div>
                     <div class="theme-toggle d-flex gap-2  align-items-center mt-2">
                         <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
@@ -68,7 +74,35 @@
             </div>
             <div class="sidebar-menu">
                 <ul class="menu mt-0">
-                    @yield('navbar')
+                    <li class="sidebar-title">Menu</li>
+
+                    <li class="sidebar-item {{ request()->is('category') ? 'active' : '' }}">
+                        <a href="{{ route('category') }}" class='sidebar-link'>
+                            <i class="bi bi-diagram-3-fill"></i>
+                            <span>Category</span>
+                        </a>
+                    </li>
+
+                    <li class="sidebar-item {{ request()->is('application') ? 'active' : '' }}" >
+                        <a  href="{{ route('application') }}" class='sidebar-link' >
+                            <i class="bi bi-window-stack"></i>
+                            <span>Application</span>
+                        </a>
+                    </li>
+
+                    <li class="sidebar-item" style="margin-bottom:5rem;">
+                        <a href="{{ route('logout') }}"
+                            onclick="event.preventDefault();
+document.getElementById('logout-form').submit();"
+                            class='sidebar-link'>
+                            <i class="bi bi-box-arrow-in-left"></i>
+                            <span>Logout</span>
+                        </a>
+                    </li>
+                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                        @csrf
+                    </form>
+
                 </ul>
 
             </div>
