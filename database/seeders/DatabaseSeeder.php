@@ -30,13 +30,36 @@ class DatabaseSeeder extends Seeder
         Category::create(['name' => 'Education']);
         Category::create(['name' => 'Entertainment']);
 
-        Application::create([
-            'name' => 'Call Visit',
-            'image' => 'https://www.kangarooselfstorage.co.uk/wp-content/uploads/2018/12/Business-Storage-Archive-Storage-1.jpg',
-            'url' => 'https://www.kangarooselfstorage.co.uk/wp-content/uploads/2018/12/Business-Storage-Archive-Storage-1.jpg',
-            'category_id' => 1,
-            'type' => 'Mobile',
-            'year' => '2022'
-        ]);
+        // Application::create([
+        //     'name' => 'Salesman Report',
+        //     'image' => 'https://www.kangarooselfstorage.co.uk/wp-content/uploads/2018/12/Business-Storage-Archive-Storage-1.jpg',
+        //     'url' => 'http://103.247.219.37:9001',
+        //     'category_id' => 1,
+        //     'type' => 'Web',
+        //     'year' => '2022',
+        //     'description' => 'Web ini dibuat menggunakan ReactJs',
+        //     'created_by' => 'Achmad Dhani Syahputra'
+        // ]);
+
+        // Application::create([
+        //     'name' => 'Call Visit',
+        //     'image' => 'https://www.kangarooselfstorage.co.uk/wp-content/uploads/2018/12/Business-Storage-Archive-Storage-1.jpg',
+        //     'url' => 'http://103.247.219.37:9009',
+        //     'category_id' => 1,
+        //     'type' => 'Web',
+        //     'year' => '2022',
+        //     'description' => 'Web ini dibuat menggunakan laravel, database MYSQL',
+        //     'created_by' => 'Dwi Arya Putra'
+        // ]);
+        // Application::create([
+        //     'name' => 'Kas',
+        //     'image' => 'https://www.kangarooselfstorage.co.uk/wp-content/uploads/2018/12/Business-Storage-Archive-Storage-1.jpg',
+        //     'url' => 'http://103.247.219.37:9011',
+        //     'category_id' => 1,
+        //     'type' => 'Web',
+        //     'year' => '2022',
+        //     'description' => 'Web ini dibuat menggunakan laravel, database MYSQL',
+        //     'created_by' => 'Ezhar Mahesa'
+        // ]);
     }
 }

@@ -21,6 +21,8 @@ class CreateApplicationsTable extends Migration
             $table->foreignId('category_id')->constrained()->onDelete('cascade')->onUpdate('cascade');
             $table->string('type');
             $table->string('year');
+            $table->string('created_by');
+            $table->text('description');
             $table->timestamps();
         });
     }

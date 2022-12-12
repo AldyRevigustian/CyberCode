@@ -7,8 +7,8 @@
     <title>Unaivailable</title>
     <link rel="stylesheet" href="/assets/css/main/app.css">
     <link rel="stylesheet" href="/assets/css/pages/error.css">
-    <link rel="shortcut icon" href="/assets/images/logo/tiaraicon.svg" type="image/x-icon">
-    <link rel="shortcut icon" href="/assets/images/logo/tiaraicon.png" type="image/png">
+    <link rel="shortcut icon" href="/assets/images/logo/favicon.svg" type="image/x-icon">
+    <link rel="shortcut icon" href="/assets/images/logo/favicon.png" type="image/png">
 </head>
 
 <body>

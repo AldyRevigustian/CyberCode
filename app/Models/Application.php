@@ -15,10 +15,13 @@ class Application extends Model
         'url',
         'category_id',
         'type',
-        'year'
+        'year',
+        'created_by',
+        'description'
     ];
 
-    public function category(){
+    public function category()
+    {
         return $this->belongsTo(Category::class);
     }
 }

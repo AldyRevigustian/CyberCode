@@ -3,6 +3,7 @@
 use App\Http\Controllers\ApplicationController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\LandingController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -17,13 +18,14 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return redirect('/login');
-});
+// Route::get('/', function () {
+//     return redirect('/login');
+// });
+Route::get('/', [LandingController::class, 'index']);
 
 Auth::routes();
 
-Route::get('/home', [HomeController::class, 'index'])->name('home');
+// Route::get('/home', [HomeController::class, 'index'])->name('home');
 
 // Category
 Route::get('/category', [CategoryController::class, 'index'])->name('category');
@@ -36,4 +38,3 @@ Route::get('/application', [ApplicationController::class, 'index'])->name('appli
 Route::post('/application/store', [ApplicationController::class, 'store'])->name('add.application');
 Route::put('/application/{id}', [ApplicationController::class, 'update'])->name('edit.application');
 Route::delete('/application/{id}', [ApplicationController::class, 'destroy'])->name('delete.application');
-

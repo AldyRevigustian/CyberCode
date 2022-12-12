@@ -37,31 +37,37 @@
                     <div class="card-body">
                         <button type="button" class="btn icon icon-left btn-primary mb-3" data-bs-toggle="modal"
                             data-bs-target="#add"><i class="bi bi-plus-lg"></i> Add</button>
-                        <table class="table table-striped" id="table1">
+                        <table class="table " id="table1">
                             <thead>
                                 <tr>
-                                    <th class="col-1">No.</th>
+                                    <th style="width: 30px">No.</th>
                                     <th>Name</th>
                                     <th>App Image</th>
                                     <th>App Url</th>
+                                    <th>App Description</th>
                                     <th class="col-1">Category</th>
                                     <th class="col-1">Type</th>
                                     <th class="col-1">Year's Made</th>
+                                    <th class="col-1">Created By</th>
                                     <th class="col-1">Action</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 @foreach ($applications as $index => $application)
                                     <tr>
-                                        <td>{{ $index += 1 }}</td>
+                                        <td style="width: 30px">{{ $index += 1 }}</td>
                                         <td>{{ $application->name }}</td>
-                                        <td >
-                                                <img src="{{ asset('storage/' . $application->image) }}" alt="" style="max-width: 200px;">
+                                        <td>
+                                            <img src="{{ asset('storage/' . $application->image) }}" alt=""
+                                                style="width: 200px; height: 80px; object-fit: cover">
                                         </td>
-                                        <td style="word-wrap: break-word;max-width:150px;">{{ $application->url }}</td>
+                                        <td style="word-wrap: break-word;max-width:150px; max-height: ">
+                                            {{ $application->url }}</td>
+                                        <td>{{ $application->description }}</td>
                                         <td>{{ $application->category->name }}</td>
                                         <td>{{ $application->type }}</td>
                                         <td>{{ $application->year }}</td>
+                                        <td>{{ $application->created_by }}</td>
                                         <td>
                                             <a href="#" class="btn icon btn-success" data-bs-toggle="modal"
                                                 data-bs-target="#edit{{ $application->id }}"><i

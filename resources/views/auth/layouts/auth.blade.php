@@ -17,31 +17,67 @@
     <link rel="stylesheet" href="/assets/css/main/app.css">
     <link rel="stylesheet" href="/assets/css/pages/auth.css">
 
-    <link rel="shortcut icon" href="/assets/images/logo/tiaraicon.svg" type="image/x-icon">
-    <link rel="shortcut icon" href="/assets/images/logo/tiaraicon.png" type="image/png">
+    <link rel="shortcut icon" href="/assets/images/logo/favicon.svg" type="image/x-icon">
+    <link rel="shortcut icon" href="/assets/images/logo/favicon.png" type="image/png">
 
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
     <link rel="stylesheet" href="/assets/extensions/choices.js/public/assets/styles/choices.css">
 
     <style>
-        #auth{
+        #auth {
 
             display: flex;
             justify-content: center;
             align-items: center;
-            background-image: url('/assets/images/kelas.png');
+            background-image: url('/assets/images/bg.png');
             background-filter: blur(8px);
             background-repeat: no-repeat;
             background-size: cover
         }
-        .card-login{
+
+        .card-login {
             display: flex;
             flex-direction: column;
             justify-content: center;
-            background-color: white;
-            padding: 60px 40px;
-            border-radius: 10px;
+            padding: 60px 40px 20px 40px;
+            border-radius: 15px;
+            backdrop-filter: blur(50px);
+            background-color: rgba(17, 14, 14, 0.4);
+            border: 2px solid grey;
+            color: white;
+            overflow: hidden;
+        }
+        .btn-login{
+            border-radius: 15px;
+            backdrop-filter: blur(50px);
+            background-color: rgba(17, 14, 14, 0.4);
+            border: 2px solid grey;
+        }
+
+        .form-control {
+            border-radius: 15px;
+            backdrop-filter: blur(50px);
+            background-color: rgba(17, 14, 14, 0.4);
+            border: 2px solid grey;
+            /* -webkit-box-shadow: 0 0 0 1000px #1b1b1b inset !important;
+            -webkit-text-fill-color: white !important; */
+        }
+        .form-control:focus {
+            border-radius: 15px;
+            backdrop-filter: blur(50px);
+            background-color: rgba(17, 14, 14, 0.4);
+            border: 2px solid grey;
+            /* -webkit-box-shadow: 0 0 0 1000px #1b1b1b inset !important;
+            -webkit-text-fill-color: white !important; */
+        }
+
+        input:-webkit-autofill,
+        textarea:-webkit-autofill,
+        select:-webkit-autofill {
+
+            -webkit-box-shadow: 0 0 0 1000px #1b1b1b inset !important;
+            -webkit-text-fill-color: white !important;
         }
     </style>
 </head>

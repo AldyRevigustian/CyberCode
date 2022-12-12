@@ -2,9 +2,8 @@
 
 @section('content')
     <div id="auth">
-
         <div class="card-login col-lg-4 col-12">
-            <h1 class="text-center">Log in.</h1>
+            <h1 class="text-center text-light">Log in.</h1>
             <p class="text-center mb-5" style="font-size: 1.5rem">Please login to continue</p>
             <form method="POST" action="{{ route('login') }}">
                 @csrf
@@ -38,7 +37,8 @@
                     </span>
                 @enderror
 
-                <button class="btn btn-primary btn-block btn-lg shadow-lg mt-5" type="submit">Log in</button>
+                <button class="btn btn-login btn-block btn-lg mt-5" type="submit" style="color: white">Log in</button>
+                <a href="/" style="display: block; text-align: center" class="mt-3 mb-0 pb-0 text-light">Back To Home</a>
             </form>
         </div>
     </div>

@@ -8,6 +8,10 @@ use Illuminate\Http\Request;
 
 class ApplicationController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
     public function index()
     {
         $categories = Category::all();
@@ -23,6 +27,8 @@ class ApplicationController extends Controller
             'url' => 'required',
             'type' => 'required',
             'year' => 'required',
+            'created_by' => 'required',
+            'description' => 'required',
         ]);
 
 
@@ -33,6 +39,8 @@ class ApplicationController extends Controller
             'year' => $request->year,
             'type' => $request->type,
             'category_id' => $request->category_id,
+            'created_by' => $request->created_by,
+            'description' => $request->description
         ]);
 
         if ($application) {
@@ -50,19 +58,33 @@ class ApplicationController extends Controller
         $application = Application::find($id);
 
         $request->validate([
-            'name' => 'required|unique:applications,name',
-            'image' => 'required',
+            'name' => 'required',
             'url' => 'required',
             'year' => 'required',
+            'created_by' => 'required',
+            'description' => 'required',
         ]);
 
-        $application->update([
-            'name' => $request->name,
-            'image' => $request->image,
-            'url' => $request->url,
-            'year' => $request->year,
-            'category_id' => $request->category_id,
-        ]);
+        if ($request->file('image')) {
+            $application->update([
+                'name' => $request->name,
+                'image' => $request->file('image')->store('images'),
+                'url' => $request->url,
+                'year' => $request->year,
+                'category_id' => $request->category_id,
+                'created_by' => $request->created_by,
+                'description' => $request->description
+            ]);
+        } else {
+            $application->update([
+                'name' => $request->name,
+                'url' => $request->url,
+                'year' => $request->year,
+                'category_id' => $request->category_id,
+                'created_by' => $request->created_by,
+                'description' => $request->description
+            ]);
+        }
 
         if ($application) {
             session()->flash('success', 'Application successfully updated');

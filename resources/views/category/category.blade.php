@@ -37,7 +37,7 @@
                     <div class="card-body">
                         <button type="button" class="btn icon icon-left btn-primary mb-3" data-bs-toggle="modal"
                             data-bs-target="#add"><i class="bi bi-plus-lg"></i> Add</button>
-                        <table class="table table-striped" id="table1">
+                        <table class="table" id="table1">
                             <thead>
                                 <tr>
                                     <th class="col-1">No.</th>
