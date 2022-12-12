@@ -6,7 +6,12 @@
                 <a class="navbar-brand fw-bold" href="https://www.instagram.com/anothersideofrpl/?hl=id"
                     target="_blank">CyberCode</a>
             </div>
-            <input class="search-input" placeholder="Search..." type="text" wire:model='search'>
+            <div class="input-group search-group row">
+                <form action="{{ route('filter') }}" id="myForm" style="display: contents" method="GET">
+                    <input type="text" class="yearpicker col-2" name="year" id="yearpicker" readonly placeholder="{{ $year }}" onchange=" document.getElementById('myForm').submit();" />
+                </form>
+                <input class="search-input col-10" placeholder="Search..." type="text" wire:model='search'>
+            </div>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                 aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -16,11 +21,9 @@
                 <ul class="navbar-nav">
                     <li class="nav-item">
                         <div class="btn-login">
-                            {{-- <h4> --}}
                             <a class="nav-link" href="{{ route('login') }}">
                                 Login
                             </a>
-                            {{-- </h4> --}}
                         </div>
                     </li>
                 </ul>
@@ -53,8 +56,8 @@
                                     </div>
                                 </div>
                                 <div class="card-body pb-0 pt-0">
-                                    <img src="{{ asset($app->image) }}"
-                                        style="height: 150px;object-fit: cover;" class="card-img" alt="...">
+                                    <img src="{{ asset($app->image) }}" style="height: 150px;object-fit: cover;"
+                                        class="card-img" alt="...">
                                     <p class="card-text mt-3" style="padding: 10px 13px">{{ $app->description }}</p>
                                 </div>
                                 <div class="card-footer border-0 pt-0 pb-0">

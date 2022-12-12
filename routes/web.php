@@ -26,6 +26,7 @@ Route::get('/home', function () {
 Auth::routes();
 
 // Route::get('/home', [HomeController::class, 'index'])->name('home');
+Route::get('/filter', [LandingController::class, 'filter'])->name('filter');
 
 // Category
 Route::get('/category', [CategoryController::class, 'index'])->name('category');

@@ -9,6 +9,13 @@ class LandingController extends Controller
 {
     public function index()
     {
-        return view('landing');
+        $year = date('Y');
+        return view('landing', compact('year'));
+    }
+
+    public function filter(Request $request)
+    {
+        $year = $request->year;
+        return view('landing', compact('year'));
     }
 }
