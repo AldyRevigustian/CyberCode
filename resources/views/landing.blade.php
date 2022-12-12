@@ -163,13 +163,13 @@
 
         .search-group {
             width: 100%;
-            margin: 0px 50px;
+            margin: 0px 80px;
         }
 
         .search-group .yearpicker {
             border-radius: 15px 0px 0px 15px;
             backdrop-filter: blur(50px);
-            background-color: rgba(17, 14, 14, 0.9);
+            background-color: rgba(17, 14, 14, 0.4);
             border: 2px solid grey;
             color: white;
             padding: 10px 15px;
@@ -179,14 +179,14 @@
 
         .search-group .yearpicker::placeholder {
             color: white;
-            font-weight: bold
+            font-weight: normal
         }
 
         .search-input {
             border-radius:  0px 15px 15px 0px;
             padding: 10px 15px;
             backdrop-filter: blur(50px);
-            background-color: rgba(17, 14, 14, 0.9);
+            background-color: rgba(17, 14, 14, 0.8);
             border: 2px solid grey;
             color: white;
 
@@ -202,8 +202,6 @@
             font-size: 20px;
             padding: 0px 10px;
         }
-
-        .btn-login a: {}
 
         .not-found {
             border-radius: 15px;
