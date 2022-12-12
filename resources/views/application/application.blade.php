@@ -58,7 +58,7 @@
                                         <td style="width: 30px">{{ $index += 1 }}</td>
                                         <td>{{ $application->name }}</td>
                                         <td>
-                                            <img src="{{ asset('storage/' . $application->image) }}" alt=""
+                                            <img src="{{ asset($application->image) }}" alt=""
                                                 style="width: 200px; height: 80px; object-fit: cover">
                                         </td>
                                         <td style="word-wrap: break-word;max-width:150px; max-height: ">

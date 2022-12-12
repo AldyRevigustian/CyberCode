@@ -44,6 +44,9 @@ class ApplicationController extends Controller
         ]);
 
         if ($application) {
+            $application->update([
+                'image' => 'storage/' . $application->image
+            ]);
             session()->flash('success', 'Application successfully created');
             return redirect()->route('application');
         } else {
@@ -66,7 +69,7 @@ class ApplicationController extends Controller
         ]);
 
         if ($request->file('image')) {
-            $application->update([
+            $appUpd = $application->update([
                 'name' => $request->name,
                 'image' => $request->file('image')->store('images'),
                 'url' => $request->url,
@@ -75,6 +78,12 @@ class ApplicationController extends Controller
                 'created_by' => $request->created_by,
                 'description' => $request->description
             ]);
+
+            if ($appUpd) {
+                $application->update([
+                    'image' => 'storage/' . $application->image
+                ]);
+            }
         } else {
             $application->update([
                 'name' => $request->name,

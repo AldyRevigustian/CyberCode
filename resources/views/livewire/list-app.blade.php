@@ -48,14 +48,14 @@
                                     <div class="col-1 text-center">
                                         <a href="{{ $app->url }}" target="_blank">
                                             <h5 class="card-header text-white fw-light float-end"><i
-                                                    class="bi bi-arrow-up-right"></i></h5>
+                                                    class="bi bi-box-arrow-up-right"></i></h5>
                                         </a>
                                     </div>
                                 </div>
-                                <div class="card-body pb-0 pt-1">
-                                    <img src="{{ asset('storage/' . $app->image) }}"
+                                <div class="card-body pb-0 pt-0">
+                                    <img src="{{ asset($app->image) }}"
                                         style="height: 150px;object-fit: cover;" class="card-img" alt="...">
-                                    <p class="card-text mt-4" style="padding: 10px 13px">{{ $app->description }}</p>
+                                    <p class="card-text mt-3" style="padding: 10px 13px">{{ $app->description }}</p>
                                 </div>
                                 <div class="card-footer border-0 pt-0 pb-0">
                                     <div class="row">

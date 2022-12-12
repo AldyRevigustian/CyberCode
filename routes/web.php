@@ -17,11 +17,11 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
-// Route::get('/', function () {
-//     return redirect('/login');
-// });
 Route::get('/', [LandingController::class, 'index']);
+
+Route::get('/home', function () {
+    return redirect('/application');
+});
 
 Auth::routes();
 

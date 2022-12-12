@@ -41,7 +41,15 @@
                 </div>
             </div>
             <div class="sidebar-menu">
+
+
                 <ul class="menu mt-0">
+                    <li class="sidebar-item ">
+                        <a href="/" class='sidebar-link'>
+                            <i class="bi bi-chevron-left"></i>
+                            <span>Back</span>
+                        </a>
+                    </li>
                     <li class="sidebar-title">Menu</li>
 
                     <li class="sidebar-item {{ request()->is('category') ? 'active' : '' }}">
@@ -98,7 +106,6 @@ document.getElementById('logout-form').submit();"
             localStorage.setItem('theme', "theme-dark")
             appBody.classList.add("theme-dark");
         };
-
     </script>
 
     <script src="/assets/extensions/simple-datatables/umd/simple-datatables.js"></script>

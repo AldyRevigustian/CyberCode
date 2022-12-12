@@ -91,7 +91,7 @@
 
                     <label>Created By : </label>
                     <div class="form-group">
-                        <input type="text" placeholder="Year's Made"
+                        <input type="text" placeholder="Created By"
                             class="form-control {{ $errors->has('created_by') ? 'is-invalid' : '' }}" name="created_by"
                             value="{{ old('created_by') }}">
                         <div class="invalid-feedback">
@@ -152,7 +152,7 @@
                         </div>
 
                         <div class="row">
-                            <img src="{{ asset('storage/' . $application->image) }}"
+                            <img src="{{ asset($application->image) }}"
                                 style="object-fit: cover; height: 150px; width: 370px;" class="mb-1 blahs" />
                         </div>
 
@@ -231,7 +231,7 @@
 
                         <label>Created By : </label>
                         <div class="form-group">
-                            <input type="text" placeholder="Year's Made"
+                            <input type="text" placeholder="Created By"
                                 class="form-control {{ $errors->has('created_by') ? 'is-invalid' : '' }}"
                                 name="created_by" value="{{ $application->created_by }}">
                             <div class="invalid-feedback">

@@ -66,7 +66,7 @@
         .card-text {
             border-radius: 10px;
             border: 2px solid grey;
-            height: 150px;
+            height: 120px;
             overflow-y: scroll;
         }
 

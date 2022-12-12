@@ -11,8 +11,8 @@ class ListApp extends Component
     public function render()
     {
         $application = Application::where('name', 'like', '%' . $this->search . '%')
-            ->where('created_by', 'like', '%' . $this->search . '%')
-            ->where('year', 'like', '%' . $this->search . '%')->get();
+            ->orWhere('created_by', 'like', '%' . $this->search . '%')
+            ->orWhere('year', 'like', '%' . $this->search . '%')->get();
         return view('livewire.list-app', compact('application'));
     }
 }
