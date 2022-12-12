@@ -9,7 +9,6 @@ class LandingController extends Controller
 {
     public function index()
     {
-        $application = Application::get();
-        return view('landing', compact('application'));
+        return view('landing');
     }
 }
