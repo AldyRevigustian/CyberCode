@@ -16,13 +16,10 @@ class ListApp extends Component
         $year = $this->year;
         $search = $this->search;
         $filter = Application::where('year', $year);
-        // $application = $filter->where('name', 'like', '%' . $this->search . '%')
-        //     ->orWhere('created_by', 'like', '%' . $this->search . '%')
-        //     ->get();
         $application = $filter->where(function ($query) use ($search) {
             $query->where('name', 'like', '%' . $this->search . '%')
                 ->orWhere('created_by', 'like', '%' . $this->search . '%');
-        })->orderBy("name", "ASC")->get();
+        })->orderBy("name")->get();
         return view('livewire.list-app', compact('application', 'year'));
     }
 }
