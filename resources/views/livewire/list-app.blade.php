@@ -1,5 +1,4 @@
 <div>
-<div class="smooth-scroll-wrapper">
     <nav class="navbar navbar-expand-lg transparent navbar-inverse mt-4">
         <div class="container">
             <div class="d-flex gap-2 align-items-center">
@@ -81,6 +80,5 @@
                 @endif
             </div>
         </div>
-    </div>
     </div>
 </div>
