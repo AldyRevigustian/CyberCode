@@ -86,7 +86,14 @@ document.getElementById('logout-form').submit();"
     </div>
 
     @yield('content')
-
+    
+    <footer>
+        <div class="footer clearfix mb-0 text-white">
+            <div class="text-center">
+                <p>2022 &copy; CyberCode - XII RPL</p>
+            </div>
+        </div>
+    </footer>
     <script src="/assets/js/bootstrap.js"></script>
     <script src="/assets/js/app.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js"></script>

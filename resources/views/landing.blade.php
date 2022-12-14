@@ -222,8 +222,18 @@
 </head>
 
 <body>
-    @livewire('list-app', ['year' => $year])
-    {{-- @livewire('list-app') --}}
+    <div class="smooth-scroll-wrapper">
+        @livewire('list-app', ['year' => $year])
+        {{-- @livewire('list-app') --}}
+        <footer>
+            <div class="footer clearfix mb-0 text-white">
+                <div class="text-center">
+                    <p>2022 &copy; CyberCode - XII RPL</p>
+                </div>
+            </div>
+        </footer>
+    </div>
+
     <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js"
         integrity="sha512-T/tUfKSV1bihCnd+MxKD0Hm1uBBroVYBOYSk1knyvQ9VyZJpc/ALb4P0r6ubwVPSGB2GvjeoMAJJImBG12TiaQ=="
@@ -244,6 +254,28 @@
 
             });
         })
+    </script>
+
+    <script>
+        const body = document.body,
+            scrollWrap = document.getElementsByClassName("smooth-scroll-wrapper")[0],
+            height = scrollWrap.getBoundingClientRect().height - 1,
+            speed = 0.04;
+
+        var offset = 0;
+
+        body.style.height = Math.floor(height) + "px";
+
+        function smoothScroll() {
+            offset += (window.pageYOffset - offset) * speed;
+
+            var scroll = "translateY(-" + offset + "px) translateZ(0)";
+            scrollWrap.style.transform = scroll;
+
+            callScroll = requestAnimationFrame(smoothScroll);
+        }
+
+        smoothScroll();
     </script>
 
     @livewireScripts
