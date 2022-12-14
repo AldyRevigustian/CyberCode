@@ -22,7 +22,7 @@ class ListApp extends Component
         $application = $filter->where(function ($query) use ($search) {
             $query->where('name', 'like', '%' . $this->search . '%')
                 ->orWhere('created_by', 'like', '%' . $this->search . '%');
-        })->get();
+        })->orderBy("name", "ASC")->get();
         return view('livewire.list-app', compact('application', 'year'));
     }
 }
