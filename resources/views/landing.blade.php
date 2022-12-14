@@ -21,6 +21,9 @@
         crossorigin="anonymous" referrerpolicy="no-referrer" />
 
     <style>
+        html { 
+        scroll-behavior: smooth; 
+        }
         .datepicker td,
         th {
             text-align: center;
