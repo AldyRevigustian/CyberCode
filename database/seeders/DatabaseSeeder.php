@@ -4,6 +4,7 @@ namespace Database\Seeders;
 
 use App\Models\Application;
 use App\Models\Category;
+use App\Models\Identity;
 use App\Models\User;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\App;
@@ -41,25 +42,12 @@ class DatabaseSeeder extends Seeder
             'created_by' => 'Dwi Arya Putra'
         ]);
 
-        // Application::create([
-        //     'name' => 'Call Visit',
-        //     'image' => 'https://www.kangarooselfstorage.co.uk/wp-content/uploads/2018/12/Business-Storage-Archive-Storage-1.jpg',
-        //     'url' => 'http://103.247.219.37:9009',
-        //     'category_id' => 1,
-        //     'type' => 'Web',
-        //     'year' => '2022',
-        //     'description' => 'Web ini dibuat menggunakan laravel, database MYSQL',
-        //     'created_by' => 'Dwi Arya Putra'
-        // ]);
-        // Application::create([
-        //     'name' => 'Kas',
-        //     'image' => 'https://www.kangarooselfstorage.co.uk/wp-content/uploads/2018/12/Business-Storage-Archive-Storage-1.jpg',
-        //     'url' => 'http://103.247.219.37:9011',
-        //     'category_id' => 1,
-        //     'type' => 'Web',
-        //     'year' => '2022',
-        //     'description' => 'Web ini dibuat menggunakan laravel, database MYSQL',
-        //     'created_by' => 'Ezhar Mahesa'
-        // ]);
+        Identity::create([
+            'name' => 'TenizenCode',
+            'logo' => 'logo.png',
+            'address' => 'Jl. SMEA 6 Jl. Mayjen Sutoyo, Cawang, Kec. Kramat jati, Kota Jakarta Timur, Daerah Khusus Ibukota Jakarta 13630',
+            'email' => 'tenizencode@gmail.com',
+            'phone' => '089653132158',
+        ]);
     }
 }

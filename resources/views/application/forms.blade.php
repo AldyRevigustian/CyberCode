@@ -128,7 +128,7 @@
                 </div>
                 <div class="modal-body">
                     <form action="{{ route('edit.application', $application->id) }}" method="POST"
-                        class="needs-validation"  enctype="multipart/form-data">
+                        class="needs-validation" enctype="multipart/form-data">
                         @csrf
                         @method('put')
 
@@ -264,14 +264,6 @@
             image.style.width = '370px'
         }
     }
-
-    // var image2 = document.getElementById('blah2')
-    // imgInp2.onchange = evt => {
-    //     const [file] = imgInp2.files
-    //     if (file) {
-    //         blah2.src = URL.createObjectURL(file)
-    //     }
-    // }
 
     let imgInps = document.getElementsByClassName('imgInps')
     Array.from(imgInps).forEach(function(imgInp2) {

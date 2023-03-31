@@ -3,9 +3,11 @@
 use App\Http\Controllers\ApplicationController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\IdentityController;
 use App\Http\Controllers\LandingController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
+use PHPUnit\Framework\MockObject\Builder\Identity;
 
 /*
 |--------------------------------------------------------------------------
@@ -39,3 +41,7 @@ Route::get('/application', [ApplicationController::class, 'index'])->name('appli
 Route::post('/application/store', [ApplicationController::class, 'store'])->name('add.application');
 Route::put('/application/{id}', [ApplicationController::class, 'update'])->name('edit.application');
 Route::delete('/application/{id}', [ApplicationController::class, 'destroy'])->name('delete.application');
+
+// Identity
+Route::get('/identity', [IdentityController::class, 'index'])->name('identity');
+Route::put('/identity/update', [IdentityController::class, 'update'])->name('edit.identity');

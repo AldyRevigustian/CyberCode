@@ -8,7 +8,8 @@
             </div>
             <div class="input-group search-group row">
                 <form action="{{ route('filter') }}" id="myForm" style="display: contents" method="GET">
-                    <input type="text" class="yearpicker col-2" name="year" id="yearpicker" readonly placeholder="{{ $year }}" onchange=" document.getElementById('myForm').submit();" />
+                    <input type="text" class="yearpicker col-2" name="year" id="yearpicker" readonly
+                        placeholder="{{ $year }}" onchange=" document.getElementById('myForm').submit();" />
                 </form>
                 <input class="search-input col-10" placeholder="Search..." type="text" wire:model='search'>
             </div>

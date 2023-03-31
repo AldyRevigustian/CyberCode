@@ -30,7 +30,7 @@
                 <div class="card shadow-sm">
                     <div class="card-header" style="padding-bottom: 0px">
                         <h5>
-                            List Categories
+                            Categories List
                         </h5>
                         <hr>
                     </div>

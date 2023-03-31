@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CyberCode</title>
+    <title>TenizenCode</title>
 
     <link rel="stylesheet" href="/assets/css/main/app.css">
     <link rel="stylesheet" href="/assets/css/main/app-dark.css">
@@ -66,6 +66,13 @@
                         </a>
                     </li>
 
+                    <li class="sidebar-item {{ request()->is('identity') ? 'active' : '' }}">
+                        <a href="{{ route('identity') }}" class='sidebar-link'>
+                            <i class="bi bi-window-stack"></i>
+                            <span>Identity</span>
+                        </a>
+                    </li>
+
                     <li class="sidebar-item" style="margin-bottom:5rem;">
                         <a href="{{ route('logout') }}"
                             onclick="event.preventDefault();
@@ -86,11 +93,11 @@ document.getElementById('logout-form').submit();"
     </div>
 
     @yield('content')
-    
+
     <footer>
         <div class="footer clearfix mb-0 text-white">
             <div class="text-center">
-                <p>2022 &copy; CyberCode - XII RPL</p>
+                <p>2022 &copy; TenizenCode - RPL 54'</p>
             </div>
         </div>
     </footer>
