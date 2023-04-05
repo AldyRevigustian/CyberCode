@@ -3,19 +3,18 @@
 
 <head>
     <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TenizenCode</title>
+    <title>CyberCode</title>
 
-    <link rel="stylesheet" href="/assets/css/main/app.css">
-    <link rel="stylesheet" href="/assets/css/main/app-dark.css">
+    <link rel="stylesheet" href="./assets/compiled/css/app.css" />
+    <link rel="stylesheet" href="./assets/compiled/css/app-dark.css" />
+    <link rel="stylesheet" href="./assets/compiled/css/iconly.css" />
     <link rel="shortcut icon" href="/assets/images/logo/favicon.svg" type="image/x-icon">
     <link rel="shortcut icon" href="/assets/images/logo/favicon.png" type="image/png">
+    <link rel="stylesheet" href="assets/extensions/simple-datatables/style.css" />
 
-    <link rel="stylesheet" href="/assets/css/shared/iconly.css">
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
 
-    <link rel="stylesheet" href="/assets/extensions/simple-datatables/style.css">
-    <link rel="stylesheet" href="/assets/css/pages/simple-datatables.css">
     <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
 
     <link rel="stylesheet"
@@ -51,6 +50,39 @@
                         </a>
                     </li>
                     <li class="sidebar-title">Menu</li>
+
+                    <li class="sidebar-item has-sub">
+                        <a href="#" class="sidebar-link">
+                            <i class="bi bi-stack"></i>
+                            <span>Divisions</span>
+                        </a>
+
+                        <ul class="submenu">
+                            <li class="submenu-item">
+                                <a href="{{ route('admin') }}" class="submenu-link">Admin</a>
+                            </li>
+
+                            <li class="submenu-item">
+                                <a href="{{ route('android') }}" class="submenu-link">Android</a>
+                            </li>
+
+                            <li class="submenu-item">
+                                <a href="{{ route('courses') }}" class="submenu-link">Courses</a>
+                            </li>
+
+                            <li class="submenu-item">
+                                <a href="{{ route('content-creator') }}" class="submenu-link">Content Creator</a>
+                            </li>
+
+                            <li class="submenu-item">
+                                <a href="{{ route('service') }}" class="submenu-link">Service</a>
+                            </li>
+
+                            <li class="submenu-item">
+                                <a href="{{ route('website') }}" class="submenu-link">Website</a>
+                            </li>
+                        </ul>
+                    </li>
 
                     <li class="sidebar-item {{ request()->is('category') ? 'active' : '' }}">
                         <a href="{{ route('category') }}" class='sidebar-link'>
@@ -102,7 +134,8 @@ document.getElementById('logout-form').submit();"
         </div>
     </footer>
     <script src="/assets/js/bootstrap.js"></script>
-    <script src="/assets/js/app.js"></script>
+    <script src="./assets/compiled/js/app.js"></script>
+    <script src="./assets/static/js/components/dark.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js"></script>
 
     <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
@@ -122,8 +155,8 @@ document.getElementById('logout-form').submit();"
         };
     </script>
 
-    <script src="/assets/extensions/simple-datatables/umd/simple-datatables.js"></script>
-    <script src="/assets/js/pages/simple-datatables.js"></script>
+    <script src="assets/extensions/simple-datatables/umd/simple-datatables.js"></script>
+    <script src="assets/static/js/pages/simple-datatables.js"></script>
 </body>
 
 </html>

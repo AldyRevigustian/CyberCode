@@ -4,6 +4,7 @@ namespace Database\Seeders;
 
 use App\Models\Application;
 use App\Models\Category;
+use App\Models\Division;
 use App\Models\Identity;
 use App\Models\User;
 use Illuminate\Database\Seeder;
@@ -48,6 +49,49 @@ class DatabaseSeeder extends Seeder
             'address' => 'Jl. SMEA 6 Jl. Mayjen Sutoyo, Cawang, Kec. Kramat jati, Kota Jakarta Timur, Daerah Khusus Ibukota Jakarta 13630',
             'email' => 'tenizencode@gmail.com',
             'phone' => '089653132158',
+        ]);
+
+        Division::create([
+            'photo' => 'logo.png',
+            'full_name' => 'Data Dummy',
+            'division' => 'Admin',
+            'address' => 'Jl. jalan',
+            'status' => 'active'
+        ]);
+        Division::create([
+            'photo' => 'logo.png',
+            'full_name' => 'Data Dummy',
+            'division' => 'Android',
+            'address' => 'Jl. jalan',
+            'status' => 'active'
+        ]);
+        Division::create([
+            'photo' => 'logo.png',
+            'full_name' => 'Data Dummy',
+            'division' => 'Courses',
+            'address' => 'Jl. jalan',
+            'status' => 'active'
+        ]);
+        Division::create([
+            'photo' => 'logo.png',
+            'full_name' => 'Data Dummy',
+            'division' => 'Content Creator',
+            'address' => 'Jl. jalan',
+            'status' => 'active'
+        ]);
+        Division::create([
+            'photo' => 'logo.png',
+            'full_name' => 'Data Dummy',
+            'division' => 'Service',
+            'address' => 'Jl. jalan',
+            'status' => 'active'
+        ]);
+        Division::create([
+            'photo' => 'logo.png',
+            'full_name' => 'Data Dummy',
+            'division' => 'Website',
+            'address' => 'Jl. jalan',
+            'status' => 'active'
         ]);
     }
 }

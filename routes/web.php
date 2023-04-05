@@ -2,9 +2,11 @@
 
 use App\Http\Controllers\ApplicationController;
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\DivisionController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\IdentityController;
 use App\Http\Controllers\LandingController;
+use Illuminate\Routing\RouteUrlGenerator;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use PHPUnit\Framework\MockObject\Builder\Identity;
@@ -19,6 +21,7 @@ use PHPUnit\Framework\MockObject\Builder\Identity;
 | contains the "web" middleware group. Now create something great!
 |
 */
+
 Route::get('/', [LandingController::class, 'index']);
 
 Route::get('/home', function () {
@@ -45,3 +48,14 @@ Route::delete('/application/{id}', [ApplicationController::class, 'destroy'])->n
 // Identity
 Route::get('/identity', [IdentityController::class, 'index'])->name('identity');
 Route::put('/identity/update', [IdentityController::class, 'update'])->name('edit.identity');
+
+// Division
+Route::get('/admin', [DivisionController::class, 'admin'])->name('admin');
+Route::get('/android-developer', [DivisionController::class, 'android'])->name('android');
+Route::get('/courses', [DivisionController::class, 'courses'])->name('courses');
+Route::get('/content-creator', [DivisionController::class, 'contentCreator'])->name('content-creator');
+Route::get('/service', [DivisionController::class, 'service'])->name('service');
+Route::get('/website-developer', [DivisionController::class, 'website'])->name('website');
+Route::post('/member/store', [DivisionController::class, 'store'])->name('add.member');
+Route::put('/member/store/{id}', [DivisionController::class, 'update'])->name('update.member');
+Route::delete('/member/destroy/{id}', [DivisionController::class, 'destroy'])->name('delete.member');
