@@ -6,6 +6,7 @@ use App\Models\Application;
 use App\Models\Category;
 use App\Models\Division;
 use App\Models\Identity;
+use App\Models\Inbox;
 use App\Models\User;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\App;
@@ -92,6 +93,12 @@ class DatabaseSeeder extends Seeder
             'division' => 'Website',
             'address' => 'Jl. jalan',
             'status' => 'active'
+        ]);
+        Inbox::create([
+            'name' => 'Testing',
+            'email' => 'Testing@gmail.com',
+            'phone' => '0123123213',
+            'message' => 'tessssssss'
         ]);
     }
 }

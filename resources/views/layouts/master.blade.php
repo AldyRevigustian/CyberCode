@@ -28,13 +28,17 @@
         }
     </style>
 </head>
+@php
+    use App\Models\Identity;
+    $identity = Identity::first();
+@endphp
 
 <body class="theme-dark">
     <div id="sidebar" class="active">
         <div class="sidebar-wrapper active">
             <div class="sidebar-header position-relative "
                 style="display: flex; flex-direction:column; justify-content:center; align-items:center;">
-                <img src="/assets/images/logo/logo.png" style="height: 70px">
+                <img src={{ asset('storage/image/logo/' . $identity->logo) }} style="height: 70px">
                 <div class="sidebar-toggler  x">
                     <a href="#" class="sidebar-hide d-xl-none d-block"><i class="bi bi-x bi-middle"></i></a>
                 </div>
@@ -102,6 +106,13 @@
                         <a href="{{ route('identity') }}" class='sidebar-link'>
                             <i class="bi bi-window-stack"></i>
                             <span>Identity</span>
+                        </a>
+                    </li>
+
+                    <li class="sidebar-item {{ request()->is('inbox') ? 'active' : '' }}">
+                        <a href="{{ route('inbox') }}" class='sidebar-link'>
+                            <i class="bi bi-window-stack"></i>
+                            <span>Inbox</span>
                         </a>
                     </li>
 

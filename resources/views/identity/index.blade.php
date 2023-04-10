@@ -108,7 +108,7 @@
                         <hr>
                     </div>
                     <div class="card-body">
-                        <center><img src="/assets/images/logo/{{ $identity->logo }}" alt=""
+                        <center><img src={{ asset('storage/image/logo/' . $identity->logo) }} alt=""
                                 style="width: 200px; height: 80px;"></center>
                         <div class="row mt-5">
                             <div class="col-6">

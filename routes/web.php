@@ -5,6 +5,7 @@ use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\DivisionController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\IdentityController;
+use App\Http\Controllers\InboxController;
 use App\Http\Controllers\LandingController;
 use Illuminate\Routing\RouteUrlGenerator;
 use Illuminate\Support\Facades\Auth;
@@ -59,3 +60,6 @@ Route::get('/website-developer', [DivisionController::class, 'website'])->name('
 Route::post('/member/store', [DivisionController::class, 'store'])->name('add.member');
 Route::put('/member/store/{id}', [DivisionController::class, 'update'])->name('update.member');
 Route::delete('/member/destroy/{id}', [DivisionController::class, 'destroy'])->name('delete.member');
+
+// Inbox
+Route::get('/inbox', [InboxController::class, 'index'])->name('inbox');

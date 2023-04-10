@@ -72,37 +72,26 @@ class IdentityController extends Controller
     {
         $identity = Identity::where('id', '1')->first();
 
-        if ($request->file('logo')) {
-            $appUpd = $identity->update([
-                'name' => $request->name,
-                'logo' => $request->file('logo')->store('logo'),
-                'address' => $request->address,
-                'email' => $request->email,
-                'phone' => $request->phone,
-                'instagram' => $request->instagram,
-            ]);
 
-            if ($appUpd) {
-                $identity->update([
-                    'logo' => 'storage/' . $identity->image
-                ]);
-            }
-        } else {
+        $identity->update([
+            'name' => $request->name,
+            'logo' => $request->file('image')->store('logo'),
+            'address' => $request->address,
+            'email' => $request->email,
+            'phone' => $request->phone,
+            'instagram' => $request->instagram,
+        ]);
+
+        if ($request->hasFile('image')) {
+            $filename = time() . '.jpg';
+            $request->file('image')->storeAs('public/image/logo', $filename);
             $identity->update([
-                'name' => $request->name,
-                'address' => $request->address,
-                'email' => $request->email,
-                'phone' => $request->phone,
-                'instagram' => $request->instagram,
+                'logo' => $filename
             ]);
-        }
-
-        if ($identity) {
-            session()->flash('success', 'identity successfully updated');
-            return redirect()->route('identity');
+            session()->flash('success', 'division successfully updated');
+            return redirect()->back();
         } else {
-            session()->flash('error', 'Failed to update identity');
-            return redirect()->route('identity');
+            session()->flash('error', 'Failed to update member');
         }
     }
 

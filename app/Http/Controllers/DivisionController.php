@@ -11,28 +11,37 @@ class DivisionController extends Controller
     {
         $admins = Division::where('division', 'Admin')->get();
         $members = Division::all();
-        // dd($admin);
-        return view('division.admin', compact('admins','members'));
+        return view('division.admin', compact('admins', 'members'));
     }
     public function android()
     {
-        return view('division.android');
+        $androids = Division::where('division', 'Android')->get();
+        $members = Division::all();
+        return view('division.android', compact('androids', 'members'));
     }
     public function courses()
     {
-        return view('division.courses');
+        $courses = Division::where('division', 'Courses')->get();
+        $members = Division::all();
+        return view('division.courses', compact('courses', 'members'));
     }
     public function contentCreator()
     {
-        return view('division.content-creator');
+        $content_creators = Division::where('division', 'Content Creator')->get();
+        $members = Division::all();
+        return view('division.content_creator', compact('content_creators', 'members'));
     }
     public function service()
     {
-        return view('division.service');
+        $services = Division::where('division', 'Service')->get();
+        $members = Division::all();
+        return view('division.service', compact('services', 'members'));
     }
     public function website()
     {
-        return view('division.website');
+        $websites = Division::where('division', 'Website')->get();
+        $members = Division::all();
+        return view('division.website', compact('websites', 'members'));
     }
     public function store(Request $request)
     {
@@ -52,6 +61,8 @@ class DivisionController extends Controller
             ]);
             session()->flash('success', 'division successfully created');
             return redirect()->back();
+        } else {
+            session()->flash('error', 'Failed to created member');
         }
     }
     public function update(Request $request, $id)
@@ -72,8 +83,10 @@ class DivisionController extends Controller
             $division->update([
                 'photo' => $filename
             ]);
-            session()->flash('success', 'division successfully created');
+            session()->flash('success', 'division successfully updated');
             return redirect()->back();
+        } else {
+            session()->flash('error', 'Failed to update member');
         }
     }
     public function destroy($id)

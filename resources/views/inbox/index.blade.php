@@ -12,7 +12,7 @@
             <div class="page-title">
                 <div class="row">
                     <div class="col-12 col-md-6 order-md-1 order-last mb-3">
-                        <h3>Android Division</h3>
+                        <h3>Inbox</h3>
                     </div>
                     <div class="col-12 col-md-6 order-md-2 order-first">
                         <nav aria-label="breadcrumb" class="breadcrumb-header float-start float-lg-end">
@@ -30,51 +30,33 @@
                 <div class="card shadow-sm">
                     <div class="card-header" style="padding-bottom: 0px">
                         <h5>
-                            Member List
+                            All Inboxes
                         </h5>
                         <hr>
                     </div>
                     <div class="card-body">
-                        <button type="button" class="btn icon icon-left btn-primary mb-3" data-bs-toggle="modal"
-                            data-bs-target="#add"><i class="bi bi-plus-lg"></i> Add</button>
                         <table class="table" id="table1">
                             <thead>
                                 <tr>
                                     <th class="col-1">No</th>
-                                    <th class="col-1">Photo</th>
                                     <th>Name</th>
-                                    <th>Address</th>
-                                    <th class="col-1">Status</th>
-                                    <th class="col-1">Action</th>
+                                    <th class="col-1">Email</th>
+                                    <th class="col-1">Phone Number</th>
+                                    <th>Message</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                @foreach ($androids as $key => $android)
+                                @foreach ($inboxes as $key => $inbox)
                                     <tr>
                                         <td>{{ $key + 1 }}</td>
-                                        <td><img src={{ asset('storage/image/photo_member/' . $android->photo) }} alt=""
-                                                style="width: 100px; height: 150px; object-fit: cover"></td>
-                                        <td>{{ $android->full_name }}</td>
-                                        <td>{{ $android->address }}</td>
-                                        <td>{{ $android->status }}</td>
-                                        <td>
-                                            <a href="#" class="btn icon btn-success" data-bs-toggle="modal"
-                                                data-bs-target="#modalEdit{{ $android->id }}"><i
-                                                    class="bi bi-pencil-fill"></i></a>
-
-                                            <form action="{{ route('delete.member', $android->id) }}" class="d-inline"
-                                                method="POST">
-                                                @csrf
-                                                @method('DELETE')
-                                                <button type="submit" class="btn icon btn-danger">
-                                                    <i class="bi bi-trash-fill"></i></a>
-                                            </form>
-                                        </td>
+                                        <td>{{ $inbox->name }}</td>
+                                        <td>{{ $inbox->email }}</td>
+                                        <td>{{ $inbox->phone }}</td>
+                                        <td>{{ $inbox->message }}</td>
                                     </tr>
                                 @endforeach
                             </tbody>
                         </table>
-                        @include('division.forms')
                     </div>
                 </div>
             </section>
